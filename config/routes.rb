@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :songs
+  map.resources :users
+
+  map.resources :songs 
+  map.song_file 'file', :controller=> "songs", :action => "file", :path_prefix => "/songs/:id"
 
   # The priority is based upon order of creation: first created -> highest priority.
 

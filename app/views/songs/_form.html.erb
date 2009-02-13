@@ -1,0 +1,18 @@
+<% form_for(@song, :html => {:multipart => true}) do |f| %>
+  <%= f.hidden_field '_rev' unless @song.new_record? %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </p>
+  <p>
+    <%= f.label :attachment %>
+    <%= f.file_field :attachment %>
+  </p>
+  <p>
+    <%= f.submit "submit" %>
+  </p>
+<% end %>

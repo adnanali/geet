@@ -4,12 +4,16 @@
   <tr>
     <th>Name</th>
     <th>Link</th>
+    <th>Filename</th>
   </tr>
 
-<% for song in @songs %>
+<% for song in @songs.rows %>
   <tr>
     <td><%=h song.name %></td>
     <td><%=h song.link %></td>
+    <td>
+
+  <%= link_to h(song.filename), song_file_path(song.id) %></td>
     <td><%= link_to 'Show', song %></td>
     <td><%= link_to 'Edit', edit_song_path(song) %></td>
     <td><%= link_to 'Destroy', song, :confirm => 'Are you sure?', :method => :delete %></td>
